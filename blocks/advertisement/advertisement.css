@@ -1,0 +1,37 @@
+.advertisement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--body-font-family, sans-serif);
+  font-size: 0.95rem;
+}
+
+.advertisement-table th {
+  text-align: left;
+  color: #0033a0;
+  font-weight: 700;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  vertical-align: bottom;
+}
+
+.advertisement-table td {
+  padding: 0.75rem 0.5rem;
+  border-top: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.advertisement-table tr:nth-child(even) td {
+  background-color: #f8f9fa;
+}
+
+.advertisement-table a {
+  color: #0047bb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.advertisement-table a:hover,
+.advertisement-table a:focus {
+  text-decoration: underline;
+}
