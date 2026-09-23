@@ -1,3 +1,21 @@
+/**
+ * Walks back through immediately preceding advertisement blocks to find the
+ * table that this group of adjacent blocks should share.
+ * @param {Element} wrapper The block's wrapper div (main > .section > div)
+ * @returns {HTMLTableElement|null}
+ */
+function findSharedTable(wrapper) {
+  let sibling = wrapper.previousElementSibling;
+  while (sibling) {
+    const prevBlock = sibling.querySelector(':scope > .advertisement.block');
+    if (!prevBlock) return null;
+    const table = prevBlock.querySelector(':scope > table.advertisement-table');
+    if (table) return table;
+    sibling = sibling.previousElementSibling;
+  }
+  return null;
+}
+
 export default function decorate(block) {
   // 🔹 Remove "button" class from any links inside this block
   block.querySelectorAll('a.button').forEach((link) => {
@@ -20,12 +38,54 @@ export default function decorate(block) {
   });
 
   // Extract relevant fields (safe, lint-clean)
-  const contractNumber = data.contractnumber;
-  const advertisementLink = data.advertisementlink?.querySelector('a')?.href;
+  // label is authored as "Contract Number(Link to ad)", so match by prefix
+  const contractNumberKey = Object.keys(data).find((key) => key.startsWith('contractnumber'));
+  const contractNumber = contractNumberKey && data[contractNumberKey];
   const dueDate = data.duedate?.textContent?.trim() || '';
   const description = data.description || '';
   const solicitationDoc = data.solicitationdocument || '';
   const responseDoc = data.response || data.responsetobiddersquestions || '';
+
+  // Build data row
+  const row = document.createElement('tr');
+
+  // Contract Number cell (the value div itself contains the ad link)
+  const tdContract = document.createElement('td');
+  const contractLink = contractNumber?.querySelector('a');
+  const contractText = contractLink?.textContent?.trim() || contractNumber?.textContent?.trim();
+  if (contractText) {
+    const link = document.createElement('a');
+    link.href = contractLink?.href || '#';
+    link.textContent = contractText;
+    tdContract.append(link);
+  } else {
+    tdContract.textContent = '';
+  }
+
+  const tdDue = document.createElement('td');
+  tdDue.textContent = dueDate;
+
+  const tdDesc = document.createElement('td');
+  tdDesc.innerHTML = description.innerHTML || '';
+
+  const tdSolicit = document.createElement('td');
+  tdSolicit.innerHTML = solicitationDoc.innerHTML || '';
+
+  const tdResponse = document.createElement('td');
+  tdResponse.innerHTML = responseDoc.innerHTML || '';
+
+  row.append(tdContract, tdDue, tdDesc, tdSolicit, tdResponse);
+
+  // If immediately adjacent to another advertisement block, join its table
+  // instead of rendering a separate one-row table.
+  const wrapper = block.parentElement;
+  const sharedTable = wrapper && findSharedTable(wrapper);
+  if (sharedTable) {
+    sharedTable.querySelector('tbody').append(row);
+    block.textContent = '';
+    if (wrapper) wrapper.style.display = 'none';
+    return;
+  }
 
   // Build table
   const table = document.createElement('table');
@@ -48,33 +108,6 @@ export default function decorate(block) {
   table.append(thead);
 
   const tbody = document.createElement('tbody');
-  const row = document.createElement('tr');
-
-  // Contract Number cell (make link)
-  const tdContract = document.createElement('td');
-  const contractText = contractNumber?.textContent?.trim();
-  if (contractText) {
-    const link = document.createElement('a');
-    link.href = advertisementLink || '#';
-    link.textContent = contractText;
-    tdContract.append(link);
-  } else {
-    tdContract.textContent = '';
-  }
-
-  const tdDue = document.createElement('td');
-  tdDue.textContent = dueDate;
-
-  const tdDesc = document.createElement('td');
-  tdDesc.innerHTML = description.innerHTML || '';
-
-  const tdSolicit = document.createElement('td');
-  tdSolicit.innerHTML = solicitationDoc.innerHTML || '';
-
-  const tdResponse = document.createElement('td');
-  tdResponse.innerHTML = responseDoc.innerHTML || '';
-
-  row.append(tdContract, tdDue, tdDesc, tdSolicit, tdResponse);
   tbody.append(row);
   table.append(tbody);
 
