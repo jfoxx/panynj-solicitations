@@ -1,0 +1,16 @@
+{
+  "variantName": "table-solicit",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-width data table with a bold header row and horizontal row dividers. Cells hold rich content including multiple links and short paragraphs.",
+  "contentPattern": "First row = block name (plus optional variant); first data row acts as the header; subsequent rows are data rows with multiple columns.",
+  "usage": "Solicitation/procurement listings with columns such as contract number, due date, description, and related links.",
+  "options": [
+    "no-header",
+    "striped",
+    "bordered"
+  ],
+  "memberVariantIds": [
+    "table-solicit"
+  ]
+}

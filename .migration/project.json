@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "panynj-solicitations": {
+      "previewOrg": "jfoxx",
+      "previewSite": "panynj-solicitations",
+      "contentHostUrl": "https://content.da.live/jfoxx/panynj-solicitations/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

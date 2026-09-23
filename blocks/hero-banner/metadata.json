@@ -1,0 +1,14 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-width banner with a solid dark background and a prominent title. Title-only layout with no background image or CTA. Accent underline beneath the heading.",
+  "contentPattern": "Row 1 = block name; optional Row 2 = background image; final row = title (plus optional subheading and CTA).",
+  "usage": "Page-top hero banner announcing the page topic.",
+  "options": [
+    "no-image"
+  ],
+  "memberVariantIds": [
+    "hero-banner"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "solicitations-advertisements",
+      "urls": [
+        "https://www.panynj.gov/port-authority/en/business-opportunities/solicitations-advertisements/Construction.html"
+      ],
+      "representativeUrl": "https://www.panynj.gov/port-authority/en/business-opportunities/solicitations-advertisements/Construction.html",
+      "description": "Construction solicitations/advertisements listing page with a hero banner, intro guidance content, multiple solicitation data tables, and a promotional CTA card row.",
+      "urlPattern": "/port-authority/en/business-opportunities/solicitations-advertisements/*",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".SimpleHero"
+          ]
+        },
+        {
+          "name": "table-solicit",
+          "instances": [
+            ".AppPage table",
+            ".Text table"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".CTABreakerList"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "hero",
+          "selector": [
+            ".SimpleHero"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "body",
+          "selector": [
+            "#main .AppPage",
+            ".AppPage"
+          ],
+          "style": null,
+          "blocks": [
+            "table-solicit"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "cta-breaker",
+          "selector": [
+            ".CTABreakerList"
+          ],
+          "style": "gray",
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

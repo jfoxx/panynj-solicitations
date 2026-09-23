@@ -1,0 +1,119 @@
+/*
+ * Cards (Promo) block — CTA breaker variant
+ * Values extracted from source .CTABreakerList / .CTABreaker computed styles.
+ * Band background (#F8F9FA) is applied at section level via section-metadata style=gray.
+ */
+
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px 0;
+}
+
+.cards-promo > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card body holds title, subtitle, CTA link */
+.cards-promo .cards-promo-card-body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title (h4) — 20px, regular weight, black, with blue accent bar beneath */
+.cards-promo .cards-promo-card-body h4 {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+
+.cards-promo .cards-promo-card-body h4::after {
+  content: "";
+  display: block;
+  position: relative;
+  bottom: -16px;
+  width: 24px;
+  height: 4px;
+  background: var(--brand-blue);
+}
+
+/* Title link inherits black, no underline */
+.cards-promo .cards-promo-card-body h4 a:any-link {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Subtitle (h5) — 14px, regular, black */
+.cards-promo .cards-promo-card-body h5 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #000;
+}
+
+/* CTA link paragraph */
+.cards-promo .cards-promo-card-body p {
+  margin: 0;
+}
+
+/* CTA link — 14px black text with a blue right-chevron arrow.
+   Overrides the global EDS button reset. */
+.cards-promo .cards-promo-card-body p a:any-link,
+main .cards-promo .cards-promo-card-body a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cards-promo .cards-promo-card-body p a:any-link::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  background-color: var(--brand-blue);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon transform="translate(12,12) rotate(90) translate(-12,-12)" points="12 10.6666667 6.4 16 5 14.6666667 12 8 19 14.6666667 17.6 16"/></svg>') no-repeat center / contain;
+}
+
+.cards-promo .cards-promo-card-body p a:hover {
+  text-decoration: none;
+}
+
+/* Remove the button-container inline spacing EDS may add */
+.cards-promo .button-container {
+  display: inline;
+}
+
+/* Desktop: three columns side by side, divided by thin vertical rules */
+@media (width >= 900px) {
+  .cards-promo > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .cards-promo > ul > li {
+    padding: 0 48px;
+    border-right: 1px solid rgb(3 2 3 / 10%);
+  }
+
+  .cards-promo > ul > li:last-child {
+    border-right: none;
+  }
+}

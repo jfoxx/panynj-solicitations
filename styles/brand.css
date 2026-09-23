@@ -1,0 +1,37 @@
+/*
+ * Brand design tokens — extracted from
+ * https://www.panynj.gov (Port Authority of NY & NJ)
+ */
+:root {
+  /* fonts — GT America / GT America Extended are commercial; system fallback used */
+  --body-font-family: "GT America", helvetica, arial, freesans, sans-serif;
+  --heading-font-family: "GT America Extended", helvetica, arial, freesans, sans-serif;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #0047bb;
+  --link-hover-color: #00307d;
+
+  /* brand palette */
+  --brand-blue: #0047bb;
+  --brand-blue-dark: #00307d;
+  --accent-yellow: #fffe56;
+  --cta-band-color: #f8f9fa;
+
+  /* section variants */
+  --light-color: #f8f9fa;
+  --dark-color: #0047bb;
+
+  /* spacing */
+  --section-padding: 32px 48px;
+  --content-max-width: 1200px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 48px;
+  --heading-size-xl: 24px;
+  --heading-size-l: 22px;
+  --heading-size-m: 20px;
+  --heading-size-s: 16px;
+  --heading-size-xs: 16px;
+}

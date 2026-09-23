@@ -1,0 +1,132 @@
+/*
+ * Table (Solicitations) Block
+ * Brand styling extracted from panynj.gov Construction solicitation tables:
+ *  - No cell borders; rows separated by striping (odd data row = #f5f6f7)
+ *  - Header cells: brand blue, bold, 16px; body cells: black, 18px
+ *  - Generous cell padding (24px, 32px left on the first column)
+ *  - Rich description cells hold multiple paragraphs of links (brand blue)
+ */
+
+.table-solicit.block {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-solicit.block table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+}
+
+@media (width >= 900px) {
+  .table-solicit.block table {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* header row */
+.table-solicit.block table thead th {
+  color: var(--brand-blue);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 26px;
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* body cells */
+.table-solicit.block table tbody td {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 26px;
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+@media (width >= 900px) {
+  .table-solicit.block table thead th,
+  .table-solicit.block table tbody td {
+    padding: 24px;
+  }
+
+  .table-solicit.block table tbody td {
+    font-size: var(--body-font-size-m);
+  }
+
+  .table-solicit.block table thead th:first-child,
+  .table-solicit.block table tbody td:first-child {
+    padding-left: 32px;
+  }
+}
+
+/* row striping — odd data rows use the light band color */
+.table-solicit.block table tbody tr:nth-child(odd) {
+  background-color: var(--light-color);
+}
+
+/* rich cell content: reset default paragraph margins, use source spacing */
+.table-solicit.block table th p,
+.table-solicit.block table td p {
+  margin: 0 0 24px;
+}
+
+.table-solicit.block table th p:last-child,
+.table-solicit.block table td p:last-child {
+  margin: 0;
+}
+
+.table-solicit.block table td ul {
+  margin: 0 0 24px;
+  padding-left: 1.2em;
+}
+
+/* links in cells: brand blue, no underline (matches source) */
+.table-solicit.block table a:any-link {
+  color: var(--link-color);
+  font-weight: inherit;
+  text-decoration: none;
+  word-break: normal; /* source breaks at hyphens/spaces, not mid-word */
+  overflow-wrap: anywhere;
+}
+
+.table-solicit.block table a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/*
+ * EDS auto-decorates single-link paragraphs into p.button-container > a.button.
+ * The global reset makes .button-container inline, which collapses the vertical
+ * spacing between the stacked links in rich description cells. Restore block
+ * flow with the source's 24px paragraph rhythm.
+ */
+.table-solicit.block table .button-container {
+  display: block;
+  margin: 0 0 24px;
+}
+
+.table-solicit.block table .button-container:last-child {
+  margin-bottom: 0;
+}
+
+.table-solicit.block table a.button:any-link {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* no-header variant: keep striping consistent from the first row */
+.table-solicit.block.no-header table tbody tr:nth-child(odd) {
+  background-color: var(--light-color);
+}
+
+/* striped variant is the default look; bordered variant adds cell borders */
+.table-solicit.block.bordered table th,
+.table-solicit.block.bordered table td {
+  border: 1px solid var(--brand-blue);
+}

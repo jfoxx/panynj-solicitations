@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.panynj.gov/port-authority/en/business-opportunities/solicitations-advertisements/Construction.html",
+  "path": "port-authority/en/business-opportunities/solicitations-advertisements/construction",
+  "timestamp": "2026-09-23T17:33:23.651Z",
+  "title": "Construction Opportunities | Port Authority of New York and New Jersey",
+  "template": "solicitations-advertisements",
+  "blocks": [
+    "hero-banner",
+    "table-solicit",
+    "table-solicit",
+    "table-solicit",
+    "cards-promo"
+  ]
+}

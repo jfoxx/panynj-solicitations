@@ -1,0 +1,12 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Row of promotional cards without images, each showing a heading, a short description, and a call-to-action link. Typically shown in a light/gray section band.",
+  "contentPattern": "First row = block name/variant; each subsequent row = one card cell containing a heading, description, and CTA link.",
+  "usage": "Promotional call-to-action list highlighting related programs or resources.",
+  "options": [],
+  "memberVariantIds": [
+    "cards-promo"
+  ]
+}
