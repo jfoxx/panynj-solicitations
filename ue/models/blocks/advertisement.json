@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Advertisement",
+      "id": "advertisement",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"advertisement\"><div><div>Contract Number<br>(Link to ad)</div><div><a href=\"\">Contract Number</a></div></div><div><div>Due Date</div><div></div></div><div><div>Description</div><div></div></div><div><div>Solicitation Document</div><div></div></div><div><div>Response to Bidder's Questions</div><div></div></div></div>"
+        },
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Advertisement",
+              "model": "advertisement"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "advertisement",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(2)>a:nth-child(1)[href]",
+          "label": "Contract Number (Link to ad)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(2)>a:nth-child(1)",
+          "label": "Contract Number Text"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "div:nth-child(2)>div:nth-child(2)",
+          "label": "Due Date"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "div:nth-child(3)>div:nth-child(2)",
+          "label": "Description"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "div:nth-child(4)>div:nth-child(2)",
+          "label": "Solicitation Document"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "div:nth-child(5)>div:nth-child(2)",
+          "label": "Response to Bidder's Questions"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
