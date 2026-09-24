@@ -7,6 +7,12 @@
         "da": {
           "name": "image",
           "type": "image"
+        },
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/image/v1/image",
+            "template": {}
+          }
         }
       }
     }
