@@ -26,7 +26,10 @@
           "valueType": "string",
           "name": "contractNumber",
           "label": "Contract Number (Link to ad)",
-          "required": true
+          "required": true,
+          "validation": {
+            "rootPath": "/content/dam/panynj-solicitations-ue/construction-advertisements"
+          }
         },
         {
           "component": "text",
