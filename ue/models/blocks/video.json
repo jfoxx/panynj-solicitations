@@ -4,11 +4,6 @@
       "title": "Video",
       "id": "video",
       "plugins": {
-        "da": {
-          "name": "video",
-          "rows": 1,
-          "columns": 1
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -32,21 +27,21 @@
           "valueType": "boolean"
         },
         {
-          "component": "text",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+          "component": "aem-content",
+          "name": "link",
           "label": "Video URL",
           "valueType": "string",
           "required": true
         },
         {
           "component": "text",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+          "name": "linkText",
           "label": "Video URL Text",
           "valueType": "string"
         },
         {
           "component": "reference",
-          "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(2)>img:nth-child(3)[src]",
+          "name": "image",
           "label": "Poster Image",
           "valueType": "string"
         }

@@ -4,11 +4,6 @@
       "title": "Search",
       "id": "search",
       "plugins": {
-        "da": {
-          "name": "search",
-          "rows": 1,
-          "columns": 1
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -26,15 +21,15 @@
       "id": "search",
       "fields": [
         {
-          "component": "text",
+          "component": "aem-content",
           "valueType": "string",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+          "name": "link",
           "label": "Search URL",
           "required": true
         },
         {
           "component": "text",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+          "name": "linkText",
           "label": "Search URL Text",
           "valueType": "string"
         }

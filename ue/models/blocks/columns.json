@@ -4,12 +4,6 @@
       "title": "Columns",
       "id": "columns",
       "plugins": {
-        "da": {
-          "name": "columns",
-          "rows": 1,
-          "columns": 2,
-          "behaviour": "columns"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -26,10 +20,6 @@
       "title": "Columns Row",
       "id": "columns-row",
       "plugins": {
-        "da": {
-          "name": "columns-row",
-          "behaviour": "columns-row"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
@@ -45,10 +35,6 @@
       "title": "Columns Cell",
       "id": "columns-cell",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div></div>",
-          "behaviour": "columns-cell"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
@@ -88,7 +74,9 @@
     },
     {
       "id": "columns-row",
-      "components": []
+      "components": [
+        "columns-cell"
+      ]
     },
     {
       "id": "columns-cell",

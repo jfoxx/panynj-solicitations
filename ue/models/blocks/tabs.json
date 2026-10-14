@@ -4,9 +4,6 @@
       "title": "Tabs",
       "id": "tabs",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div class=\"tabs\"><div><div><p></p></div><div></div></div></div>"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -22,9 +19,6 @@
       "title": "Tabs Item",
       "id": "tabs-item",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div><div><p></p></div><div></div></div>"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
@@ -43,13 +37,13 @@
       "fields": [
         {
           "component": "text",
-          "name": "div:nth-child(1)>p:nth-child(1)",
+          "name": "name",
           "valueType": "string",
           "label": "Tab Name"
         },
         {
           "component": "richtext",
-          "name": "div:nth-child(2)",
+          "name": "text",
           "label": "Content",
           "valueType": "string"
         }

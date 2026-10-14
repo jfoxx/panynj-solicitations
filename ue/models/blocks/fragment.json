@@ -4,9 +4,6 @@
       "title": "Fragment",
       "id": "fragment",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div class=\"fragment\"><div><div><p><a href=\"\">Fragment URL</a></p></div></div></div>"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -24,14 +21,16 @@
       "id": "fragment",
       "fields": [
         {
-          "component": "text",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
           "label": "Fragment URL",
           "required": true
         },
         {
           "component": "text",
-          "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+          "valueType": "string",
+          "name": "linkText",
           "label": "Fragment URL Text"
         }
       ]

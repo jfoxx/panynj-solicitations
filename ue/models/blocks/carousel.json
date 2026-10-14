@@ -4,9 +4,6 @@
       "title": "Carousel",
       "id": "carousel",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div class=\"carousel\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -22,9 +19,6 @@
       "title": "Carousel Slide",
       "id": "carousel-item",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div>"
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
@@ -44,19 +38,19 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+          "name": "image",
           "label": "Background Image",
           "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+          "name": "imageAlt",
           "label": "Background Image Alt"
         },
         {
           "component": "richtext",
-          "name": "div:nth-child(2)",
+          "name": "text",
           "label": "Text",
           "valueType": "string"
         }

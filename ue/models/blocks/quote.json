@@ -4,11 +4,6 @@
       "title": "Quote",
       "id": "quote",
       "plugins": {
-        "da": {
-          "name": "quote",
-          "rows": 1,
-          "columns": 1
-        },
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
@@ -28,13 +23,13 @@
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "div:nth-child(1)>div:nth-child(1)",
+          "name": "quote",
           "label": "Quote",
           "required": true
         },
         {
           "component": "text",
-          "name": "div:nth-child(2)>div:nth-child(1)>p:nth-child(1)",
+          "name": "attribution",
           "label": "Author",
           "valueType": "string"
         }
