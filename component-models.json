@@ -26,6 +26,79 @@
     ]
   },
   {
+    "id": "text",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Heading Level",
+        "valueType": "string",
+        "value": "h2",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "section",
     "fields": [
       {
@@ -64,19 +137,61 @@
     ]
   },
   {
-    "id": "advertisement",
+    "id": "advertisement-xwalk",
     "fields": [
       {
         "component": "aem-content",
         "valueType": "string",
-        "name": "link",
+        "name": "contractNumber",
         "label": "Contract Number (Link to ad)",
         "required": true
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkText",
+        "name": "contractNumberText",
+        "label": "Contract Number Text"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "dueDate",
+        "label": "Due Date"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "solicitationDocument",
+        "label": "Solicitation Document"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "response",
+        "label": "Response to Bidder's Questions"
+      }
+    ]
+  },
+  {
+    "id": "advertisement",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "contractNumber",
+        "label": "Contract Number (Link to ad)",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "contractNumberText",
         "label": "Contract Number Text"
       },
       {
@@ -185,6 +300,32 @@
         "valueType": "string",
         "name": "linkText",
         "label": "Fragment URL Text"
+      }
+    ]
+  },
+  {
+    "id": "hero-xwalk",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },

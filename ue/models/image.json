@@ -7,11 +7,32 @@
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/image/v1/image",
-            "template": {}
+            "template": {
+              "model": "image"
+            }
           }
         }
       }
     }
   ],
-  "models": []
+  "models": [
+    {
+      "id": "image",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Alt Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ]
 }
