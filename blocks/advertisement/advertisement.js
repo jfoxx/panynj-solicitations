@@ -16,6 +16,21 @@ function findSharedTable(wrapper) {
   return null;
 }
 
+function formatDueDate(value) {
+  const isoDate = value.match(/^(\d{4}-\d{2}-\d{2})(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?$/);
+  if (!isoDate || Number.isNaN(Date.parse(value))) return value;
+
+  const date = new Date(`${isoDate[1]}T00:00:00Z`);
+  if (date.toISOString().slice(0, 10) !== isoDate[1]) return value;
+
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone: 'UTC',
+  }).format(date);
+}
+
 export default function decorate(block) {
   // 🔹 Remove "button" class from any links inside this block
   block.querySelectorAll('a.button').forEach((link) => {
@@ -63,7 +78,7 @@ export default function decorate(block) {
   }
 
   const tdDue = document.createElement('td');
-  tdDue.textContent = dueDate;
+  tdDue.textContent = formatDueDate(dueDate);
 
   const tdDesc = document.createElement('td');
   tdDesc.innerHTML = description.innerHTML || '';
