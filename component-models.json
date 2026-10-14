@@ -156,8 +156,8 @@
         "label": "Contract Number Text"
       },
       {
-        "component": "richtext",
-        "valueType": "string",
+        "component": "date-time",
+        "valueType": "date",
         "name": "dueDate",
         "label": "Due Date"
       },
